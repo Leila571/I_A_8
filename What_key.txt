@@ -1,0 +1,24 @@
+Question 1
+What is the order of sharps?
+Answer:
+F, C, G, D, A, E, B
+
+Question 2
+What is the order of flats?
+Answer:
+B, E, A, D, G, C, F
+
+Question 3
+What is the major scale with 3 sharps?
+Answer:
+A major
+
+Question 4
+Which way on the key signature line do you add flats?
+Answer:
+Left
+
+Question 5
+Are the minor keys above or below the line?
+Answer:
+Below
