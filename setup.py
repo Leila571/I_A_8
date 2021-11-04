@@ -11,8 +11,7 @@ setup(
     description='',
     install_requires = [
     'future~=0.18.2',
-    'playsound~=1.2.2',
-    'audioplayer~=0.6'
+
     ]
 
 
