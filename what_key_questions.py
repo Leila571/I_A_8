@@ -3,6 +3,8 @@ from audioplayer import AudioPlayer
 
 lines = []
 
+
+
 with open('what_key.txt') as f:
     lines = f.readlines()
 
@@ -23,6 +25,7 @@ def pack_questions_2d():
             questions[count][2] = lines[2+var]
             questions[count][3] = lines[3+var]
             count = count + 1
+    print(questions[0][1])
     print(questions)
 
 def shuffle():
