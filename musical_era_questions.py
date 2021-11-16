@@ -27,8 +27,9 @@ def pack_questions_2d():
 def shuffle():
     print("shuffle")
     random.shuffle(questions)
+    #print(questions)
     return questions
 
-#pack_questions_2d()
-#shuffle()
+pack_questions_2d()
+shuffle()
 
