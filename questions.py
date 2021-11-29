@@ -1,20 +1,19 @@
 import random
+from audioplayer import AudioPlayer
 
 lines = []
 
-with open('time_sigs.txt') as f:
+with open('musical_era.txt') as f:
     lines = f.readlines()
 
 # this builds a 2-d array called questions
 number_of_qustions = len(lines)
-lines_per_question = 4
+lines_per_question = 5
 questions = [[" " for x in range(lines_per_question)] for y in range(lines_per_question)]
 
-def pack_qustions_2d():
+def pack_questions_2d():
     print("pack")
-    lines_per_question = 4
-    number_of_qustions = len(lines)
-    # this reads throught the list one at a time
+    # this reads through the list one at a time
     count = 0
     for var in range (0,number_of_qustions,lines_per_question):
         if 3+var < number_of_qustions:
@@ -25,12 +24,12 @@ def pack_qustions_2d():
             questions[count][3] = lines[3+var]
             count = count + 1
 
-
-def shuffle():
+def shuffle1():
     print("shuffle")
     random.shuffle(questions)
+    #print(questions)
     return questions
 
-pack_qustions_2d()
-shuffle()
+pack_questions_2d()
+shuffle1()
 

@@ -4,7 +4,7 @@ from tkinter import *
 
 import time_sig_questions
 import what_key_questions
-import musical_era_questions
+import questions
 import musical_genre
 import What_key
 
@@ -184,8 +184,8 @@ play_game_what_key()
 
 def play_game_musical_era():
     print("line 188 in Sound play game")
-    musical_era_questions.pack_questions_2d()
-    questions_array = musical_era_questions.shuffle()
+    questions.pack_questions_2d()
+    questions_array = questions.shuffle()
     print(questions_array)
     number_of_tries = len(questions_array)
     print(number_of_tries)
