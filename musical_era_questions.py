@@ -2,20 +2,8 @@ import random
 from audioplayer import AudioPlayer
 
 lines = []
-def set_file (file_name):
-    global lines
-    global  number_of_qustions
-    global questions
-    global lines_per_question
-    with open(file_name) as f:
-        lines = f.readlines()
 
-    # this builds a 2-d array called questions
-    number_of_qustions = len(lines)
-    lines_per_question = 5
-    questions = [[" " for x in range(lines_per_question)] for y in range(lines_per_question)]
-
-with open('what_key.txt') as f:
+with open('musical_era.txt') as f:
     lines = f.readlines()
 
 # this builds a 2-d array called questions
@@ -37,9 +25,9 @@ def pack_questions_2d():
             count = count + 1
 
 def shuffle():
+    print("shuffle")
     random.shuffle(questions)
     return questions
 
 #pack_questions_2d()
 #shuffle()
-

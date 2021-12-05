@@ -1,5 +1,6 @@
 
 import questions
+import musical_era_questions
 from tkinter import *
 #import  what_key_questions
 root = Tk()
@@ -60,7 +61,31 @@ def submit_btn():
     # clears the box
     temp.set("")
 
+def counter_reset():
+    global counter
+    counter = 0
+def What_key():
+    musical_era_questions.set_file('What_key.txt')
+    musical_era_questions.pack_questions_2d()
+    musical_era_questions.shuffle()
+    get_questions()
+    question_fun(counter)
+    counter_reset()
+    print("time")
+def Time_sigs():
+    musical_era_questions.set_file('time_sigs.txt')
+    musical_era_questions.pack_questions_2d()
+    musical_era_questions.shuffle()
+    get_questions()
+    question_fun(counter)
+    counter_reset()
+    print("time")
+#make sure counter resets to 0 every time a new button is pressed
+#Button(root, text="Time Signatures!", command=Time_Signatures).grid(row=1, column=7)
+# sticky.grid(sticky=W)
 
+Button(root, text="What Key Is This?", command=What_key).grid(row=1, column=8)
+Button(root, text="Time signatures", command=Time_sigs).grid(row=1, column=9)
 my_string_var = StringVar()
 my_string_var_2 = StringVar()
 my_string_var.set("")
