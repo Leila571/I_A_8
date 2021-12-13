@@ -1,8 +1,8 @@
-
+from playsound import playsound
 import questions
 import musical_era_questions
 from tkinter import *
-#import  what_key_questions
+import what_key_questions
 root = Tk()
 root.title('The Music Theory Game')
 root.geometry("800x500")
@@ -64,6 +64,22 @@ def submit_btn():
 def counter_reset():
     global counter
     counter = 0
+
+def Musical_genre():
+    musical_era_questions.set_file('musical_genre.txt')
+    musical_era_questions.pack_questions_2d()
+    musical_era_questions.shuffle()
+    get_questions()
+    question_fun(counter)
+    counter_reset()
+def Musical_era():
+    musical_era_questions.set_file('musical_era.txt')
+    musical_era_questions.pack_questions_2d()
+    musical_era_questions.shuffle()
+    get_questions()
+    question_fun(counter)
+    counter_reset()
+
 def What_key():
     musical_era_questions.set_file('What_key.txt')
     musical_era_questions.pack_questions_2d()
@@ -86,6 +102,8 @@ def Time_sigs():
 
 Button(root, text="What Key Is This?", command=What_key).grid(row=1, column=8)
 Button(root, text="Time signatures", command=Time_sigs).grid(row=1, column=9)
+Button(root, text="Musical Genre", command=Musical_genre).grid(row=1, column=10)
+Button(root, text="Musical Era", command=Musical_era).grid(row=1, column=11)
 my_string_var = StringVar()
 my_string_var_2 = StringVar()
 my_string_var.set("")
@@ -115,19 +133,17 @@ my_label_2.grid(row=2, column=16)
 
 question_fun(counter)
 
-def musical_era_questions():
-    print("musical_era.txt")
-
-def time_sig_questions():
-    print("time_sigs.txt")
-
-def what_key_questions():
-    print("What_key.txt")
-
-def musical_genre_questions():
-    print("musical_genre.txt")
 
 
+def play_music():
+    print("Playing audio.")
+    # Playback stops when the object is destroyed (GC'ed), so save a reference to the object for non-blocking playback.
+    playsound("sample_file.mp3")
+def stop_music():
+    print("Stopping audio.")
+    # Playback stops when the object is destroyed (GC'ed), so save a reference to the object for non-blocking playback.
+    # AudioPlayer("Test.mp3").play(block=True)
+    playsound("sample_file.mp3")
 #if text_entry_var == string_to_compare :
    # print("correct")
 #else:
@@ -228,15 +244,18 @@ submit_btn_1 = Button(root, text='Submit', command=submit_btn)
 submit_btn_1.grid(row=4, column=15)
 
 
-Button(root, text="Time Signatures!", command=time_sig_questions).grid(row=1, column=7)
+Button(root, text="Time Signatures!", command=Time_sigs).grid(row=1, column=7)
 # sticky.grid(sticky=W)
 Button(root, text="What Key Is This?", command=what_key_questions).grid(row=1, column=8)
 # sticky.grid(sticky=W)
 Button(root, text="Guess the Music Era!", command=musical_era_questions).grid(row=1, column=9)
 # sticky.grid(sticky=W)
-Button(root, text="Guess the Music Genre!", command=musical_genre_questions).grid(row=1, column=10)
+Button(root, text="Guess the Music Genre!", command=Musical_genre).grid(row=1, column=10)
 # sticky.grid(sticky=W)
-
+Button(root, text="Play Music", command=play_music).grid(row=1, column=11)
+# sticky.grid(sticky=W)
+Button(root, text="Stop Music", command=stop_music).grid(row=1, column=12)
+# sticky.grid(sticky=W)
 btn_2.grid(row=1, column=15)
 my_label.grid(row=2, column=15)
 my_label_2.grid(row=2, column=16)
