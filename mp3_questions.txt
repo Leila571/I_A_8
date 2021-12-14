@@ -1,24 +1,24 @@
-Question 1
+sample_file.mp3
 What time signature is this?
 Answer:
 4/4
 
-Question 2
+GbMaj7_95BPM.wav
 What genre is this?
 Answer:
 Pop
 
-Question 3
+GbMaj7_95BPM.wav
 What instruments are used?
 Answer:
 Guitar
 
-Question 4
+sample_file.mp3
 What time signature is this?
 Answer:
 4/4
 
-Question 5
+sample_file.mp3
 What genre is this?
 Answer:
 Space rock

@@ -99,11 +99,12 @@ def Time_sigs():
 #make sure counter resets to 0 every time a new button is pressed
 #Button(root, text="Time Signatures!", command=Time_Signatures).grid(row=1, column=7)
 # sticky.grid(sticky=W)
-
+'''
 Button(root, text="What Key Is This?", command=What_key).grid(row=1, column=8)
 Button(root, text="Time signatures", command=Time_sigs).grid(row=1, column=9)
 Button(root, text="Musical Genre", command=Musical_genre).grid(row=1, column=10)
 Button(root, text="Musical Era", command=Musical_era).grid(row=1, column=11)
+'''
 my_string_var = StringVar()
 my_string_var_2 = StringVar()
 my_string_var.set("")
@@ -138,12 +139,14 @@ question_fun(counter)
 def play_music():
     print("Playing audio.")
     # Playback stops when the object is destroyed (GC'ed), so save a reference to the object for non-blocking playback.
-    playsound("sample_file.mp3")
+    playsound("GbMaj7_95BPM.wav")
 def stop_music():
     print("Stopping audio.")
     # Playback stops when the object is destroyed (GC'ed), so save a reference to the object for non-blocking playback.
     # AudioPlayer("Test.mp3").play(block=True)
-    playsound("sample_file.mp3")
+    playsound("GbMaj7_95BPM.wav")
+
+
 #if text_entry_var == string_to_compare :
    # print("correct")
 #else:
@@ -246,9 +249,9 @@ submit_btn_1.grid(row=4, column=15)
 
 Button(root, text="Time Signatures!", command=Time_sigs).grid(row=1, column=7)
 # sticky.grid(sticky=W)
-Button(root, text="What Key Is This?", command=what_key_questions).grid(row=1, column=8)
+Button(root, text="What Key Is This?", command=What_key).grid(row=1, column=8)
 # sticky.grid(sticky=W)
-Button(root, text="Guess the Music Era!", command=musical_era_questions).grid(row=1, column=9)
+Button(root, text="Guess the Music Era!", command=Musical_era).grid(row=1, column=9)
 # sticky.grid(sticky=W)
 Button(root, text="Guess the Music Genre!", command=Musical_genre).grid(row=1, column=10)
 # sticky.grid(sticky=W)
